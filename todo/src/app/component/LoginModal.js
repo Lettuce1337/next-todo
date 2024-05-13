@@ -11,7 +11,7 @@ function LoginModal() {
                 <Input isRequired type="email" name="email" placeholder="Email"/>
                 <Input isRequired type="password" name="password" placeholder="Password"/>
                 <Button className="bg-gradient-to-r from-emerald-400 to-cyan-400" type="submit">Login</Button>
-                <Link className="ml-auto" href="/signup">Don't have an account?</Link>
+                <Link className="ml-auto" href="/signup">Don&apos;t have an account?</Link>
             </div>
         </form>
     </Card>
