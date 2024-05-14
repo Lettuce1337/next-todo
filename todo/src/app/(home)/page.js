@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation"
-import { checkUser } from "../utils/supabase/actions";
+import { checkUser, getTodos } from "../utils/supabase/actions";
 import TodoModal from "../component/TodoModal";
 import TodoCards from "../component/TodoCards";
 
@@ -10,12 +10,14 @@ export default async function Home() {
       redirect('/login','replace')
     }
 
+    const todos = await getTodos()
+
 
     return (
       <>
         <TodoModal/>
         <div className="grid gap-5 grid-cols-3">
-          <TodoCards/>
+          <TodoCards todos={todos}/>
         </div>
       </>
     );
