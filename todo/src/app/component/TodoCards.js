@@ -10,15 +10,16 @@ function TodoCards({todos}) {
 
     return todos.map(({message,deadline,id})=>{
 
-      const ZonedDateTime = new parseAbsolute(deadline)
+      const zonedDateTime = new parseAbsolute(deadline)
 
-      const a = toTimeZone(ZonedDateTime,timezone).toDate()
-      console.log(a.toLocaleString('en-GB'))
+      const adjustedZonedDateTime = toTimeZone(zonedDateTime,timezone)
+                                    .toDate()
+                                    .toLocaleString('en-GB',{ dateStyle: 'short', timeStyle: 'short' })
 
       return (
         <Card className="p-10 grid gap-5" key={id}>
           <p>{message}</p>
-          <p>Deadline:{a.toLocaleString('en-GB',{ dateStyle: 'short', timeStyle: 'short' })}</p>
+          <p>Deadline:{adjustedZonedDateTime}</p>
           <form action={removeTodo}>
             <input type="hidden" name="id" value={id}></input>
             <Button color="danger" type="submit">Remove</Button>
