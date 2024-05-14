@@ -20,7 +20,7 @@ function TodoModal() {
                 <DatePicker 
                 showMonthAndYearPickers
                 hideTimeZone
-                minValue={today(getLocalTimeZone())}
+                minValue={now(getLocalTimeZone())}
                 defaultValue={now(getLocalTimeZone())}
                 label="Deadline"
                 name="date"/>

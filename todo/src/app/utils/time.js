@@ -2,7 +2,10 @@ import { parseZonedDateTime, now, getLocalTimeZone } from "@internationalized/da
 
 export function convertZonedDateTimeToISOString(ZonedDateTime){
 
-    const dateString = ZonedDateTime !== ''? ZonedDateTime:now(getLocalTimeZone()).toString()
-
-    return new Date(parseZonedDateTime(dateString).toAbsoluteString()).toISOString()
+    if(ZonedDateTime !== ''){
+        return new Date(parseZonedDateTime(ZonedDateTime).toAbsoluteString()).toISOString()
+    }
+    else{
+        return null
+    }
 }
