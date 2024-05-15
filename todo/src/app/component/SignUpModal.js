@@ -9,7 +9,8 @@ function SignUpModal() {
         <form className="flex-grow" action={signUp}>
             <div className="grid gap-y-5 p-5">
                 <Input isRequired type="email" name="email" placeholder="Email"/>
-                <Input isRequired type="password" name="password" placeholder="Password"/>
+                <Input isRequired type="password" name="password" placeholder="Password" 
+                description="After registration, a confirmation link will be sent to your email."/>
                 <Button className="bg-gradient-to-r from-emerald-400 to-cyan-400" type="submit">Sign up</Button>
                 <Link className="ml-auto" href="/login">Already have an account?</Link>
             </div>
